@@ -82,7 +82,7 @@ router.post('/:id/posts', validateUserId, validatePost,  async (req, res, next) 
   // RETURN THE NEWLY CREATED USER POST
   // this needs a middleware to verify user id
   // and another middleware to check that the request body is valid
-  const posts = await Posts.insert(req.body.text)
+  const posts = await Posts.insert(req.body)
   try {
     res.status(200).json(posts)
   } catch (err) {
